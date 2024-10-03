@@ -1,3 +1,29 @@
+@font-face {
+  font-family: "KBIZ_mjo_b";
+  font-weight: 700;
+  src: url("./fonts/KBIZ_mjo_B.otf") format("opentype");
+}
+
+
+@font-face {
+  font-family: "KBIZ_sgo_b";
+  font-weight: 700;
+  src: url("./fonts/KBIZ_sgo_B.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "KBIZ_sgo_h";
+  font-weight: 400;
+  src: url("./fonts/KBIZ_sgo_H.otf") format("opentype");
+}
+
+
+@font-face {
+  font-family: "KBIZ_sgo_m";
+  font-weight: 400;
+  src: url("./fonts/KBIZ_sgo_M.otf") format("opentype");
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +61,20 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.app-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #F5F5F5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#test {
+  font-family: "KBIZ_sgo_b";
+  font-weight: 400;
+  font-size: 28px;
 }

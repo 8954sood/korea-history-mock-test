@@ -9,8 +9,8 @@ export const Button = styled.button`
     border-radius: 12px;
     border-width: 0px;
     text-align: center;
-    font-family: "KBIZ_sgo";
+    font-family: "KBIZ_sgo_b";
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 700;
     color: #FFFFFF;
 `;
