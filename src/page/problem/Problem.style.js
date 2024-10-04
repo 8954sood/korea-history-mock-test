@@ -53,7 +53,13 @@ export const DetailText = styled.div`
   margin: 10px 0px;
 `
 
-export const Margin = styled.div`
+export const AnswerContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
   margin-top: auto;
 `
 
