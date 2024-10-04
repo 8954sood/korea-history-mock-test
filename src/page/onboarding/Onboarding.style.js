@@ -30,5 +30,4 @@ export const FirstContent = styled.div`
   font-weight: 400;
   text-align: center;
   white-space: pre-line;
-
 `;
