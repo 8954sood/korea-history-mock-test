@@ -6,9 +6,12 @@ import * as S  from "./Problem.style";
 import { useDispatch, useSelector } from "react-redux";
 import { problemActions } from "../../reducer/Problem";
 import { ProblemModel } from "../../model/Problem.model";
+import { useNavigate } from "react-router-dom";
+import { SolveRoute } from "../solve/Solve.nav";
 
 export const Problem = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const nowProblem = useSelector((state) => state.problem.nowProblem);
     const problems = useSelector((state) => state.problem.problems);
@@ -36,7 +39,7 @@ export const Problem = () => {
 
         if (problems.length === 0) {
             // Solve 페이지 이동
-            
+            navigate(SolveRoute);
             return
             // if (nowSelect == nowProblem.answer) {
                 
