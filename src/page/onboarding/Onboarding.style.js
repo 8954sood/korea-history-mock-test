@@ -31,3 +31,19 @@ export const FirstContent = styled.div`
   text-align: center;
   white-space: pre-line;
 `;
+
+export const ThirdContainer = styled.div`
+  display: flex;
+  margin-top: 40px;
+  flex-direction: row;
+  align-items: start;
+  width: calc(100% - 40px);
+  gap: 20px;
+`;
+
+export const Text = styled.div`
+  font-family: "KBIZ_sgo_m";
+  font-size: 24px;
+  font-weight: 400;
+  color: #000000;
+`
