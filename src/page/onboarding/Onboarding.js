@@ -4,12 +4,40 @@ import { Button } from "../../component/Button.style";
 import { useNavigate } from "react-router-dom";
 import { ProblemRoute } from "../problem/Problem.nav";
 import { Spacer } from "../../component/Spacer.style";
+import axios from "axios";
+import { webhookUrl } from "../../wrapper/envWrapper";
 
 
 const Onboarding = () => {
 
     const [page, setPage] = useState(0);
+    const [name, setName] = useState("");
     const navigate = useNavigate();
+
+    const onChagneName = (e) => {
+        setName(e.target.value);
+    }
+
+    const Test = () => {        
+        axios.post(
+            webhookUrl,
+            {
+                content: null,
+                embeds: [
+                    {
+                        title: "한국사 응시 시작 알림",
+                        description: `응시자 : ${name}\n`,
+                        color: 5763719,
+                        timestamp: new Date().toISOString()
+                    }
+                ]
+            }
+        ).then((res) => {
+            console.log(res);
+        }).catch((err) => {
+            console.log(err);
+        })
+    }
 
     return (
     <S.Container>
@@ -24,7 +52,7 @@ const Onboarding = () => {
         {page == 2 && (
             <S.ThirdContainer>
                 <S.Text>이름 :</S.Text>
-                <input type="text"/>
+                <input type="text" value={name} onChange={onChagneName}/>
             </S.ThirdContainer>
         )}
         <Spacer height="40px"/>
@@ -33,6 +61,7 @@ const Onboarding = () => {
                 setPage(page + 1);
             }
             else {
+                Test()
                 navigate(ProblemRoute);
             }
         }}>

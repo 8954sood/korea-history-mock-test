@@ -1,0 +1,1 @@
+export const webhookUrl = process.env.REACT_APP_DISCORD_WEBHOOK_URL
