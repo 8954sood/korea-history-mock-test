@@ -98,6 +98,7 @@ const initialState = {
         )
     ],
     nowProblem: null,
+    answer: {},
 };
 
 const randomIndex = Math.floor(Math.random() * initialState.problems.length);
@@ -119,6 +120,11 @@ export const problemSlice = createSlice({
       },
       setNowProblem: (state, action) => {
         state.nowProblem = action.payload;
+      },
+      addAnswer: (state, action) => {
+        console.log(action.payload);
+        
+        state.answer[action.payload.id] = action.payload;
       }
     },
   });

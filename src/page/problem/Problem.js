@@ -36,6 +36,7 @@ export const Problem = () => {
         } else {
             dispatch(problemActions.setFailedProblems([...failedProblems, nowProblem]));
         }
+        dispatch(problemActions.addAnswer({id: nowProblem.id, answer: nowSelect, problemIndex: count}));
 
         if (problems.length === 0) {
             // Solve 페이지 이동
