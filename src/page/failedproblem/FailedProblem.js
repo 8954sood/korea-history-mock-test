@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { SolveRoute } from "../solve/Solve.nav";
 
 export const FailedProblem = () => {
-
+    const navigate = useNavigate();
     const answer = useSelector((state) => state.problem.answer);
     const failedProblems = useSelector((state) => state.problem.failedProblems);
 
@@ -21,6 +21,7 @@ export const FailedProblem = () => {
     const onClickNext = () => {
         if (failedProblems.length === targetIndex+1) {
             // 엔딩 페이지로 이동
+            navigate(SolveRoute);
             return;
         }
         setTargetIndex(targetIndex + 1);
